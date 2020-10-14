@@ -7,7 +7,8 @@ var percorrenza = parseInt(prompt("inserisci la distanza che vuoi percorrere in 
 var prezzoKm = 0.21;
 
 // anno attuale
-var annoAttuale = new Date();
+var data = new Date();
+annoAttuale = data.getFullYear();
 
 //costanti
 // under 18
@@ -15,7 +16,7 @@ var under = 18;
 //sconto under
 var scontoUnder = 0.2;
 // senior
-var senior = 4;
+var senior = 64;
 var scontoSenior = 0.4;
 
 // età passeggero
@@ -30,19 +31,15 @@ if (etaPasseggero < under) {
   var prezzo = prezzo - sconto;
   //visualizzazione
   document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
+} else if (etaPasseggero > senior) {
+  var sconto = prezzo * scontoSenior;
+  var prezzo = prezzo - sconto;
+  //visualizzazione
+  document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
 } else {
-  // //visualizzazione
-  // document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
+  //visualizzazione
+  document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
 }
-// else if (etaPasseggero > senior) {
-//   var sconto = prezzo * scontoSenior;
-//   var prezzo = prezzo - sconto;
-//   //visualizzazione
-//   document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
-// } else {
-//   //visualizzazione
-//   document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
-// }
 
 // //visualizzazione
 // document.getElementById("prezzo").innerHTML= prezzo + " " + "euro";
